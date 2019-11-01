@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Doctors{% endblock %}
+
+{% block body %}
+    <h1>Create new Doctors</h1>
+
+    {{ include('doctors/_form.html.twig') }}
+
+    {% for message in app.flashes('error') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <a href="{{ path('doctors_index') }}">back to list</a>
+
+    {% block javascripts %}
+{#    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>#}
+{#    <script type="text/javascript">#}
+{#        $(document).ready(function() {#}
+{#            $('form').submit(function(event){#}
+{#                event.preventDefault();#}
+{#                alert('1');#}
+{#                return;#}
+{#            });#}
+
+{#            // $('form').submit(function(e) {#}
+{#            //#}
+{#            //     e.preventDefault();#}
+{#            //     alert('1');#}
+{#            //     return;#}
+{#            //#}
+{#            //     $.ajax({#}
+{#            //         type: "POST",#}
+{#            //         url: 'login.php',#}
+{#            //         data: $(this).serialize(),#}
+{#            //         success: function(response)#}
+{#            //         {#}
+{#            //             var jsonData = JSON.parse(response);#}
+{#            //#}
+{#            //             // user is logged in successfully in the back-end#}
+{#            //             // let's redirect#}
+{#            //             if (jsonData.success == "1")#}
+{#            //             {#}
+{#            //                 location.href = 'my_profile.php';#}
+{#            //             }#}
+{#            //             else#}
+{#            //             {#}
+{#            //                 alert('Invalid Credentials!');#}
+{#            //             }#}
+{#            //         }#}
+{#            //     });#}
+{#            // });#}
+{#        });#}
+{#    </script>#}
+
+
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin page{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h3 class="my-0 mr-md-auto font-weight-normal">Hospital ✅</h3>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="{{ url('main') }}">Main</a>
+                <a class="p-2 text-dark" href="#">Useless button</a>
+
+            </nav>
+
+            <a class="btn btn-outline-primary" href="{{ path('sign_out') }}">Sign out</a>
+        </div>
+    </header>
+    <div>
+
+
+        <h1>Admin page</h1>
+
+        <ul>
+            <li><a href="{{path('doctors_index')}}">Doctors</a> </li>
+        </ul>
+        <ul>
+            <li><a href="{{path('patients_index')}}">Patients</a> </li>
+        </ul>
+        <ul>
+            <li><a href="{{path('coupons_index')}}">Coupons</a> </li>
+        </ul>
+        <ul>
+            <li><a href="{{path('specialties_index')}}">Specialties</a> </li>
+        </ul>
+
+    </div>
+    <div>
+{#        <table class="table">#}
+{#            <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>Name</th>#}
+{#                <th>Surname</th>#}
+
+{#                <th>Login</th>#}
+{#                <th>Password</th>#}
+{#                <th>Date_of_birth</th>#}
+
+{#            </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#            {% for entity in entities %}#}
+{#                <tr>#}
+{#                    <td>{{ entity.getId() }}</td>#}
+{#                    <td>{{ entity.getname() }}</td>#}
+{#                    <td>{{ entity.getsurname() }}</td>#}
+
+{#                    <td>{{ entity.getlogin() }}</td>#}
+{#                    <td>{{ entity.getpassword() }}</td>#}
+{#                    <td>{{ entity.who }}</td>#}
+{#                    <td>{{ entity.speciality }}</td>#}
+
+{#                    <td>{{ entity.getdateOfBirth() ? entity.dateOfBirth|date('Y-m-d') : '' }}</td>#}
+
+{#                </tr>#}
+{#            {% else %}#}
+{#                <tr>#}
+{#                    <td colspan="5">no records found</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#            </tbody>#}
+{#        </table>#}
+    </div>
+
+    <footer>
+
+    </footer>
+{% endblock %}

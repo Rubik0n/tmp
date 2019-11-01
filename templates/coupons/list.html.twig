@@ -1,0 +1,34 @@
+<table class="table table-dark" >
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+    {#}% set patient = patients[0] %#}
+    {% for coupon in coupons %}
+        <tr>
+            <td>{{ coupon.id }}</td>
+            <td>{{ coupon.patient }}</td>
+            <td>{{ coupon.doctor }}</td>
+
+            {#<td>{{ patients[loop.index-1].name }}</td>#}
+            {#<td>{{ patients[loop.index-1].surname }}</td>
+
+            {#<td>{{ doctors[loop.index-1].name }}</td>#}
+            {#<td>{{ doctors[loop.index-1].surname }}</td>#}
+
+            <td>{{ coupon.date ? coupon.date|date('d-m-Y H:i:s') : '' }}</td>
+        </tr>
+
+    {% endfor %}
+
+
+    </tbody>
+</table>

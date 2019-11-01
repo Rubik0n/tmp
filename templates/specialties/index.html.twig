@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Specialties index{% endblock %}
+
+{% block body %}
+    <h1>Specialties index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Specialty_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for specialty in specialties %}
+            <tr>
+                <td>{{ specialty.id }}</td>
+                <td>{{ specialty.specialtyName }}</td>
+                <td>
+                    <a href="{{ path('specialties_show', {'id': specialty.id}) }}">show</a>
+                    <a href="{{ path('specialties_edit', {'id': specialty.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('specialties_new') }}">Create new</a>
+    <a href="{{path('admin')}}">Back</a>
+{% endblock %}

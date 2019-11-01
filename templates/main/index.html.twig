@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hospital{% endblock %}
+
+
+{% block body %}
+
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h3 class="my-0 mr-md-auto font-weight-normal">Hospital ✅</h3>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="{{ url('main') }}">Main</a>
+{#                <a id="uselessButton" class="p-2 text-dark" href="#">Useless button</a>#}
+                <button  id="uselessButton" >Useless button</button>
+                <button  id="auth_button" class="btn btn-outline-primary" >Sign in V2</button>
+            </nav>
+
+            <a class="btn btn-outline-primary" href="{{ path('sign_in') }}">Sign in</a>
+        </div>
+    </header>
+
+
+    <div class="container mt-5">
+        <h3 class="mb-5">Main</h3>
+    </div>
+
+    <div  id="outside"></div>
+
+
+
+
+    <div id="window">
+        <img id="closeButton" class="close" src="" alt="" onclick="show('none')">
+        <div class="form">
+            <h2 class="authorization">Authorization</h2>
+            {#action="{{path('test')}}"#}
+            <form id="signInForm">
+                <input type="text" id="login" name="login" placeholder="login"  class="input">
+                <input type="password" id="password" name="password" placeholder="password"  class="input">
+                <div id="error" class="error"></div>
+
+                <input type="button" id="signInButton" name="button" value="Sign in" class="input">
+
+            </form>
+        </div>
+    </div>
+
+
+    <div>
+        <ul>
+            <li><a href="{{path('doctors_list')}}">Doctors</a> </li>
+        </ul>
+        <ul>
+            <li><a href="{{path('patients_list')}}">Patients</a> </li>
+        </ul>
+        <ul>
+            <li><a href="{{path('coupons_list')}}">Coupons</a> </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+{% endblock %}

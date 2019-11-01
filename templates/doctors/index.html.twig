@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Doctors{% endblock %}
+
+{% block body %}
+    <style>
+        .table { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+
+    </style>
+    <h1>Doctors</h1>
+
+    <table class="table table-dark" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Specialty</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.name }}</td>
+                <td>{{ doctor.surname }}</td>
+                <td>{{ doctor.specialty }}</td>
+                <td>{{ doctor.login }}</td>
+                <td>{{ doctor.password }}</td>
+                <td>
+                    <a href="{{ path('doctors_show', {'id': doctor.id}) }}">show</a>
+                    <a href="{{ path('doctors_edit', {'id': doctor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('doctors_new') }}">Create new</a>
+    <a href="{{path('admin')}}">Back</a>
+{% endblock %}

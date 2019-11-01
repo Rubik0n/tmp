@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patients{% endblock %}
+
+{% block body %}
+    <h1>Patients</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ patient.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ patient.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ patient.surname }}</td>
+            </tr>
+            <tr>
+                <th>Date_of_birth</th>
+                <td>{{ patient.dateOfBirth ? patient.dateOfBirth|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('patients_index') }}">back to list</a>
+
+    <a href="{{ path('patients_edit', {'id': patient.id}) }}">edit</a>
+
+    {{ include('patients/_delete_form.html.twig') }}
+{% endblock %}
